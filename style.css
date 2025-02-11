@@ -1,0 +1,381 @@
+/* استايلات عامة */
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #f8f9fa;
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+a img{
+  height: 4vh;
+  width: 8vw;
+}
+/* ✅ شريط التنقل */
+.navbar {
+  background: #343a40;
+}
+.navbar-brand, .nav-link {
+  color: #fff !important;
+}
+
+/* قطاع الهيرو */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: url("bg.png");
+  background-size:cover; 
+  background-repeat: no-repeat;
+}
+
+/* خلفية الفيديو */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* تأثير التعتيم (vignette) */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* تعتيم الحواف باستخدام تدرج شعاعي: الشفافية في الوسط ثم يصبح داكناً عند الحواف */
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: -1;
+}
+
+/* محتوى الهيرو */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#btnn{
+  background: rgb(242, 203, 17);
+background: linear-gradient(90deg, rgba(242, 203, 17, 1) 0%, rgba(161, 117, 4, 1) 100%);
+border: none;
+}
+/* ✅ عنوان الأقسام */
+#services{
+  display: flex;
+  gap: 300px;
+}
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  
+}
+.section-title::after {
+  content: '';
+  width: 50%;
+  height: 3px;
+   background: rgb(242, 203, 17);
+ background: linear-gradient(90deg, rgba(242, 203, 17, 1) 0%, rgba(161, 117, 4, 1) 100%);
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+}
+
+/* ✅ صناديق الخدمات */
+.service-box {
+  background: #fff;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  padding: 15px;
+  height: 260px;
+}
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* أيقونات الخدمات */
+.service-box i {
+  color: #C99204;
+  font-size: 50px;
+  background: #F1F1F1;
+  padding: 15px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* ✅ صناديق المشاريع */
+.project-item video {
+  width: 100%;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+.project-item:hover video {
+  transform: scale(1.05);
+}
+
+/* ✅ قسم "من أنا" */
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+.info img {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+/* ✅ آراء العملاء */
+.testimonial-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+/*ايقونة الاقتباس*/
+.testimonial-card i {
+  color: #C99204 !important;
+}
+
+
+/* نص الشهادة */
+.testimonial-text {
+  font-style: italic;
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* اسم العميل */
+.testimonial-author {
+  font-weight: 600;
+  color: #C99204;
+}
+
+/* ✅ روابط السوشال ميديا */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.social-links a {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ زر العودة للأعلى */
+#backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  height: 50px;
+  width: 50px;
+   background: rgb(242,203,17);
+background: linear-gradient(90deg, rgba(242,203,17,1) 0%, rgba(161,117,4,1) 100%); 
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+}
+#backToTop.show {
+  display: block;
+  opacity: 1;
+}
+/* تنسيق القسم */
+#social-media {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+
+/* تنسيق العنوان */
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* تنسيق الأيقونات */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  color: #fff;
+  background: #555;
+  margin: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثير الهوفر */
+.social-links a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* تخصيص ألوان لكل أيقونة */
+.social-links a:nth-child(1) { background: #1877F2; } /* Facebook */
+.social-links a:nth-child(2) { background: #E1306C; } /* Instagram */
+.social-links a:nth-child(3) { background: #000; } /* TikTok */
+.social-links a:nth-child(4) { background: #0077B5; } /* LinkedIn */
+
+/* تأثير إضافي عند الهوفر - تغيير لون الخلفية */
+.social-links a:hover:nth-child(1) { background: #1256A6; } /* Facebook */
+.social-links a:hover:nth-child(2) { background: #C5225B; } /* Instagram */
+.social-links a:hover:nth-child(3) { background: #111; } /* TikTok */
+.social-links a:hover:nth-child(4) { background: #005582; } /* LinkedIn */
+
+/* جعل التصميم متجاوب */
+@media (max-width: 576px) {
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+}
+@media (max-width: 768px) {
+#ser {
+  display: flex;
+  gap: 20px;
+}
+}
+/* تحسينات عامة للحركات */
+[data-aos] {
+  transition-property: all;
+}
+
+/* تحسين مظهر العناصر أثناء الحركة */
+.aos-animate {
+  opacity: 1;
+  transform: none;
+}
+
+/* تحسينات خاصة للخدمات */
+.service-box {
+  transition: transform 0.3s ease;
+}
+.service-box:hover {
+  transform: translateY(-10px);
+}
+
+
+
+
+/* القسم الأساسي */
+#gxpz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* عنوان القسم */
+.fex-3 {
+  width: 100%;
+}
+.kppt-xtn {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* حاوية البطاقات (تمرير أفقي مع شريط تمرير مخصص) */
+.kxo-9 {
+  display: flex;
+  overflow-x: auto;
+  padding: 24px;
+  width: 90%;
+  scroll-snap-type: x mandatory;
+  scroll-padding-top: 24px;
+  border-radius: 8px;
+  gap: 20px;
+}
+.kxo-9::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.kxo-9::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #888;
+}
+
+/* تنسيق البطاقة */
+.vym-7 {
+  flex: 0 0 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #141414;
+  scroll-snap-align: start;
+}
+.vym-7 .vym-img {
+  height: 280px;
+}
+
+/* تدرجات الخلفية الخاصة بكل بطاقة */
+.vym-7:nth-child(1) .vym-img {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+.vym-7:nth-child(2) .vym-img {
+  background-image: linear-gradient(to right top, #dc09a5, #ce00b4, #ba00c5, #9c00d8, #6f12eb);
+}
+.vym-7:nth-child(3) .vym-img {
+  background-image: linear-gradient(to right top, #dc1009, #e55f00, #e49200, #dac000, #c7eb12);
+}
+
+/* محتوى البطاقة */
+.vym-7 .vym-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+.vym-7 .vym-cnt .vym-ttl {
+  font-size: 32px;
+  color: #fff;
+  text-transform: capitalize;
+}
+.vym-7 .vym-cnt .vym-dsc {
+  font-size: 16px;
+  color: #fff;
+}
+iframe{
+  width: 100%;
+}
